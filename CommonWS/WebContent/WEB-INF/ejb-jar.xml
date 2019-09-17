@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd"
+         version="3.1">
+    <enterprise-beans>                
+        <!-- CIUDAD EJB -->
+    	<session>
+            <ejb-name>CiudadDelegate</ejb-name>
+            <mapped-name>ejb/bocc/commonws/CiudadDelegate</mapped-name>
+            <ejb-class>co.com.x.common.rest.delegate.CiudadDelegate</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+        
+        <session>
+            <ejb-name>CiudadFacadeImpl</ejb-name>
+            <mapped-name>ejb/bocc/commonws/CiudadFacadeImpl</mapped-name>
+            <business-local>co.com.x.common.service.ciudad.facade.ICiudadFacade</business-local>
+            <ejb-class>co.com.x.common.service.ciudad.facade.CiudadFacadeImpl</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+ 
+        <session>
+            <ejb-name>CiudadServiceImpl</ejb-name>
+            <mapped-name>ejb/bocc/commonws/CiudadServiceImpl</mapped-name>
+            <business-local>co.com.x.common.service.ciudad.service.ICiudadService</business-local>
+            <ejb-class>co.com.x.common.service.ciudad.service.CiudadServiceImpl</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>        
+    </enterprise-beans>
+</ejb-jar>
